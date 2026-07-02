@@ -16,12 +16,10 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 from pydantic import BaseModel
 
-# Load .env — Cognee 1.2.2 reads LLM_PROVIDER, LLM_MODEL, LLM_API_KEY,
-# EMBEDDING_PROVIDER, EMBEDDING_MODEL, EMBEDDING_API_KEY from environment
-# variables automatically. No manual set_llm_config() needed.
+
 load_dotenv()
 
-# ─── Emotion-aware knowledge graph prompt ────────────────────────────────────
+
 EMOTION_AWARE_PROMPT = """
 Extract entities and relationships from the text into a knowledge graph.
 
